@@ -8,9 +8,7 @@
 
 **getServerSideProps vs getStaticProps**
 - getServerSideProps is similar to getStaticProps, but the difference is that getServerSideProps is run on every request instead of on build time.
-- getServerSideProps will only render HTML on request time, so only ssr.js with a asynv getServerSideProps will be generated, which is called when request is made to the page,  instead of both ssr.html and ssr.js
-
-
+- getServerSideProps will only render HTML on request time, so only ssr.js with a asynv getServerSideProps will be generated, which is called when request is made to the page,  instead of both ssr.html and ssr.js (每一個產生好的 HTML 頁面都會伴隨部分的 JavaScript，當一個頁面被瀏覽器載入後，這些 JavaScript 的程式碼會執行，以讓頁面能夠帶有完整的互動功能（這個過程稱作hydration）)
 
 
 **getStaticPaths**

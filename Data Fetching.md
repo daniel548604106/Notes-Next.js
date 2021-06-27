@@ -5,6 +5,10 @@
 - Static Generation (Recommended): The HTML is generated at build time and will be reused on each request. To make a page use Static Generation, either export the page component, or export getStaticProps (and getStaticPaths if necessary). It's great for pages that can be pre-rendered ahead of a user's request. You can also use it with Client-side Rendering to bring in additional data. (靜態頁面是在 build-time 時就產生，伺服器收到 request 時重複使用這些已經生成好的靜態頁面。)
 - Server-side Rendering: The HTML is generated on each request. To make a page use Server-side Rendering, export getServerSideProps. Because Server-side Rendering results in slower performance than Static Generation, use this only if absolutely necessary. (伺服器每次收到請求時在產生對應的靜態頁面。)
 
+一般來說，不論頁面中有沒有資料存在，都會建議使用 Static Generation（SSG），因為頁面只需要建立一次後，就可以透過 CDN 來提供，速度會比 SSR 來得更快。
+
+
+
 
 **getServerSideProps vs getStaticProps**
 - getServerSideProps is similar to getStaticProps, but the difference is that getServerSideProps is run on every request instead of on build time.

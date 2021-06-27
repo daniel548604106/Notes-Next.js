@@ -9,3 +9,11 @@
 **getServerSideProps vs getStaticProps**
 - getServerSideProps is similar to getStaticProps, but the difference is that getServerSideProps is run on every request instead of on build time.
 - getServerSideProps will only render HTML on request time, so only ssr.js with a asynv getServerSideProps will be generated, which is called when request is made to the page,  instead of both ssr.html and ssr.js
+
+
+
+
+**getStaticPaths**
+
+Common error
+- A required parameter(photo) was not provided as a string in getStaticPaths for [photo] : this usually results from not returning the params with the same name as what we've named for the path . (ex. [photo] , but we returned params: { id: photo.id }). Make sure it has to be the same name.

@@ -17,3 +17,4 @@
 
 Common error
 - A required parameter(photo) was not provided as a string in getStaticPaths for [photo] : this usually results from not returning the params with the same name as what we've named for the path . (ex. [photo] , but we returned params: { id: photo.id }). Make sure it has to be the same name.
+- An error may occur when you're passing parameters that's not of type string, make sure to put that on note.

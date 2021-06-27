@@ -11,9 +11,16 @@
 
 
 **getServerSideProps vs getStaticProps**
+
+**getServerSideProps**
+
 - getServerSideProps is similar to getStaticProps, but the difference is that getServerSideProps is run on every request instead of on build time.
 - getServerSideProps will only render HTML on request time, so only ssr.js with a asynv getServerSideProps will be generated, which is called when request is made to the page,  instead of both ssr.html and ssr.js (每一個產生好的 HTML 頁面都會伴隨部分的 JavaScript，當一個頁面被瀏覽器載入後，這些 JavaScript 的程式碼會執行，以讓頁面能夠帶有完整的互動功能（這個過程稱作hydration）)
 
+
+**getStaticProps**
+- 當你在匯出一個 Page 時，可以同時匯出一個名為 getStaticProps 的 async 函式，這個函式將會在 build time 時（production mode）被執行，透過這個名為 getStaticProps 的 function，等同於是告訴 Next.js 說：「這個頁面需要相依於某些外部的資料，因此當 pre-render 此頁面時，需先確定已經取得這些資料（resolve）」。
+- 由於 getStaticProps 這個函式的目的是在 build time 時執行，因此你不能使用那些只有在發送請求後才能取得的資料，像是 query parameters 或 HTTP headers。
 
 **getStaticPaths**
 

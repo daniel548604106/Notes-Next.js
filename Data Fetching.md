@@ -8,4 +8,4 @@
 
 **getServerSideProps vs getStaticProps**
 - getServerSideProps is similar to getStaticProps, but the difference is that getServerSideProps is run on every request instead of on build time.
-- getServerSideProps will only render HTML on request time, so only ssr.js will be generated instead of both ssr.html and ssr.js
+- getServerSideProps will only render HTML on request time, so only ssr.js with a asynv getServerSideProps will be generated, which is called when request is made to the page,  instead of both ssr.html and ssr.js
